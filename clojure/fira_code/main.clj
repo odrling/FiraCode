@@ -1,7 +1,6 @@
 (ns fira-code.main
   (:require
    [clojure.string :as str]
-   [fira-code.calt :as calt]
    [fira-code.coll :as coll]
    [fira-code.checks :as checks]
    [fira-code.classes :as classes]
@@ -23,7 +22,6 @@
                      :let [[_ liga] (re-matches #"([A-Za-z_]+)\.liga" name)]]
                  (str/split liga #"_")) ;; [ ["dash" "greater" "greater"] ... ]
         font'  (-> font
-                 (calt/replace-calt ligas)
                  (classes/fill-all)
                  (features/fill-all)
                  (spacers/add-spacers ligas)

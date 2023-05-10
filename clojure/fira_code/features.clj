@@ -33,5 +33,4 @@
 
 (defn fill-all [font]
   (-> font
-    (append-calt)
     (fill-features)))
